@@ -1,4 +1,14 @@
 {
+    "name": "traineeproject/core",
+    "description": "trainee project",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": ""
+        }
+    },
+    "minimum-stability": "stable",
     "require": {
         "vlucas/phpdotenv": "^5.4"
     }
