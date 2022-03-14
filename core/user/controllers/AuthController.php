@@ -22,7 +22,7 @@ class AuthController extends Controller
         if ($request->isPost()){
             $user->loadData($request->getBody());
 
-            if ($user->validate() && $user->register()){
+            if ($user->validate() && $user->save()){
                 return 'Success';
             }
 
