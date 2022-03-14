@@ -1,5 +1,6 @@
 <?php
 
+
 use app\core\user\controllers\AuthController;
 use app\core\user\controllers\SiteController;
 use app\core\base\controllers\Application;
