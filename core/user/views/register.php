@@ -1,3 +1,6 @@
+<?php
+/** @var $model \app\core\base\models\User */
+?>
 <h1>Create an account</h1>
 <?php $form = \app\core\base\controllers\form\Form::begin('', "post") ?>
     <div class="row">
