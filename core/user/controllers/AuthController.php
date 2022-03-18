@@ -10,6 +10,7 @@ use app\core\base\controllers\Response;
 use app\core\base\models\LoginForm;
 use app\core\base\models\User;
 
+
 class AuthController extends Controller
 {
     public function __construct()
@@ -65,10 +66,10 @@ class AuthController extends Controller
         $response->redirect('/');
     }
 
-    public function profile()
+    public function profile(Request $request, Response $response)
     {
-        return $this->render('profile');
-
+            var_dump($request);
+            die();
+            return $this->render('profile');
     }
-
 }
