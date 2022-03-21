@@ -36,6 +36,11 @@ class CsvFile extends DbModel
         return parent::save();
     }
 
+    public function showCsv()
+    {
+        return parent::showCsv();
+    }
+
     public function rules(): array
     {
     }

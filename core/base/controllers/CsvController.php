@@ -6,10 +6,11 @@ use app\core\base\models\CsvFile;
 
 class CsvController extends Controller
 {
-    public function index(Request $request, Response  $response)
-    {
+
+    public function index(Request $request, Response $response)
+    {   $params = $this->show();
         $this->setLayout('main');
-        return $this->render('csv', []);
+        return $this->render('csv', $params);
     }
 
     public function upload(Request $request, Response  $response)
@@ -22,7 +23,7 @@ class CsvController extends Controller
             return 'error';
         }
 
-        return $this->render('home');
+        return 'success';
     }
 
     public function readFileCsv($file = null)
@@ -47,10 +48,18 @@ class CsvController extends Controller
                         $result[] = $csvModel;
                     }
                 }
-        }
+            }
 
         return $result;
     }
+
+    public function show()
+    {
+        $dbtable = new CsvFile();
+        return $dbtable->showCsv();
+    }
+
+
 
 
 }

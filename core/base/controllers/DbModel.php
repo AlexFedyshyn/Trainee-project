@@ -45,4 +45,18 @@ abstract class DbModel extends Model
     {
         return Application::$app->db->pdo->prepare($sql);
     }
+
+    public function showCsv()
+    {
+        $dbRes = array();
+        $sql = "SELECT * FROM firstcsv";
+        $statement = self::prepare($sql);
+        $statement->execute();
+        while ($row = $statement->fetch(\PDO::FETCH_ASSOC)){
+            $dbRes[$row['AccountID']] = $row;
+        }
+        return $dbRes;
+
+    }
+
 }
