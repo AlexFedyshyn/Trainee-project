@@ -59,4 +59,21 @@ abstract class DbModel extends Model
 
     }
 
+    public function saveCsv()
+    {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        $params = array_map(fn($attr) => ":$attr", $attributes);
+
+        $statement = self::prepare("REPLACE INTO $tableName (".implode(',', $attributes).")
+                VALUES(".implode(',', $params).")");
+
+        foreach ($attributes as $attribute){
+            $statement->bindValue(":$attribute", $this->{$attribute});
+        }
+
+        $statement->execute();
+        return true;
+    }
+
 }

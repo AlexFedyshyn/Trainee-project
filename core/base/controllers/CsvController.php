@@ -1,7 +1,6 @@
 <?php
 
 namespace app\core\base\controllers;
-
 use app\core\base\models\CsvFile;
 
 class CsvController extends Controller
@@ -23,7 +22,7 @@ class CsvController extends Controller
             return 'error';
         }
 
-        return 'success';
+        return $response->redirect('/csv');
     }
 
     public function readFileCsv($file = null)
@@ -43,7 +42,7 @@ class CsvController extends Controller
                         }
                         $csvModel = new CsvFile();
                         $csvModel->loadData($data);
-                        $csvModel->save();
+                        $csvModel->saveCsv();
 
                         $result[] = $csvModel;
                     }
@@ -58,7 +57,6 @@ class CsvController extends Controller
         $dbtable = new CsvFile();
         return $dbtable->showCsv();
     }
-
 
 
 

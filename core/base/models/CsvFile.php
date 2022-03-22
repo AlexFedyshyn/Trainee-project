@@ -33,7 +33,7 @@ class CsvFile extends DbModel
 
     public function save()
     {
-        return parent::save();
+        return parent::saveCsv();
     }
 
     public function showCsv()
