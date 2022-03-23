@@ -3,6 +3,7 @@
 namespace app\core\base\controllers;
 
 use app\core\base\controllers\middlewares\BaseMiddleware;
+use app\core\base\models\CsvFile;
 
 class Controller
 {
@@ -32,5 +33,10 @@ class Controller
         return $this->middlewares;
     }
 
+    public function show()
+    {
+        $dbtable = new CsvFile();
+        return $dbtable->showCsv();
+    }
 
 }

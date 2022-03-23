@@ -7,7 +7,7 @@ use app\core\base\controllers\Model;
 
 class CsvFile extends DbModel
 {
-    const Somearray = [
+    const paramArray = [
         0 => 'AccountID',
         1 => 'FirstName',
         2 => 'LastName',
@@ -53,8 +53,8 @@ class CsvFile extends DbModel
     public function loadData($data)
     {
         foreach ($data as $key => $value){
-            if(property_exists($this, self::Somearray[$key])){
-                $propertyName = self::Somearray[$key];
+            if(property_exists($this, self::paramArray[$key])){
+                $propertyName = self::paramArray[$key];
                 $this->$propertyName = $value;
             }
         }

@@ -15,8 +15,6 @@ class Application
     public Database $db;
     public ?DbModel $user;
 
-
-
     public static Application $app;
     public ?Controller $controller = null;
 
@@ -29,8 +27,6 @@ class Application
         $this->response = new Response();
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
-
-
 
         $this->db = new Database($config['db']);
 
@@ -65,7 +61,6 @@ class Application
     {
         return $this->controller;
     }
-
 
     public function setController(Controller $controller): void
     {

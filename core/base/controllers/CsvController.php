@@ -1,10 +1,16 @@
 <?php
 
 namespace app\core\base\controllers;
+use app\core\base\controllers\middlewares\AuthMiddleware;
 use app\core\base\models\CsvFile;
 
 class CsvController extends Controller
 {
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware(['index']));
+
+    }
 
     public function index(Request $request, Response $response)
     {   $params = $this->show();
@@ -22,7 +28,7 @@ class CsvController extends Controller
             return 'error';
         }
 
-        return $response->redirect('/csv');
+        return $response->redirect('/');
     }
 
     public function readFileCsv($file = null)
@@ -52,11 +58,7 @@ class CsvController extends Controller
         return $result;
     }
 
-    public function show()
-    {
-        $dbtable = new CsvFile();
-        return $dbtable->showCsv();
-    }
+
 
 
 

@@ -1,4 +1,3 @@
-<?php use app\core\base\controllers\Application; ?>
 <h1>csv</h1>
 
 
@@ -8,7 +7,7 @@
         <form  method="post" class="form-horizontal" enctype="multipart/form-data">
             <label for="file">Load csv file</label>
             <input id="file" type="file" name="csv">
-            <button class="btn btn-default">Load file</button>
+            <button class="btn btn-default ">Load file</button>
         </form>
     </div>
 </div>
@@ -26,11 +25,11 @@
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover table-striped">
                                 <thead>
-                                    <th>AccountID</th>
-                                    <th>FirstName</th>
-                                    <th>LastName</th>
-                                    <th>Email</th>
-                                    <th>MobilePhone</th>
+                                <th>AccountID</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>MobilePhone</th>
                                 </thead>
                                 <tbody>
                                 <?php

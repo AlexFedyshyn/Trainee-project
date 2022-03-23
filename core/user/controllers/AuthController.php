@@ -15,7 +15,8 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->registerMiddleware(new AuthMiddleware(['profile']));
+        $this->registerMiddleware(new AuthMiddleware(['register']));
+
     }
 
     public function login(Request $request, Response $response)
@@ -30,7 +31,7 @@ class AuthController extends Controller
             }
         }
 
-        $this->setLayout('auth');
+        $this->setLayout('main');
         return $this->render('login', [
             'model' => $loginForm
         ]);
@@ -54,7 +55,7 @@ class AuthController extends Controller
                 'model' => $user
             ]);
         }
-        $this->setLayout('auth');
+        $this->setLayout('main');
         return $this->render('register', [
             'model' => $user
         ]);
@@ -66,10 +67,5 @@ class AuthController extends Controller
         $response->redirect('/');
     }
 
-    public function profile(Request $request, Response $response)
-    {
-            var_dump($request);
-            die();
-            return $this->render('profile');
-    }
+
 }

@@ -9,11 +9,9 @@ use app\core\base\controllers\Request;
 class SiteController extends Controller
 {
     public function home()
-    {
-        $paramas = [
-            'name' => "solo"
-        ];
-        return $this->render('home', $paramas);
+    {   $params = $this->show();
+
+        return $this->render('home', $params);
     }
 
     public function contact()
