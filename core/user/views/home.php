@@ -6,7 +6,6 @@
             <div class="panel-heading">
                 <h2>Csv file table</h2>
             </div>
-
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -39,3 +38,4 @@
         </div>
     </div>
 </div>
+
