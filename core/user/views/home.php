@@ -1,3 +1,8 @@
+<?php
+/** @var $this \app\core\base\controllers\View   */
+$this->title = 'Home';
+?>
+
 <h1>Home</h1>
 
 <div class="row mt-5">

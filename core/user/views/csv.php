@@ -1,3 +1,8 @@
+<?php
+/** @var $this \app\core\base\controllers\View   */
+$this->title = 'Csv';
+?>
+
 <h1>csv</h1>
 
 

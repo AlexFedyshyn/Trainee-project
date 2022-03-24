@@ -23,8 +23,6 @@ $config = [
 $app = new Application(dirname(__DIR__), $config);
 
 $app->router->get('/', [SiteController::class, 'home']);
-$app->router->get('/contact', [SiteController::class, 'contact']);
-$app->router->post('/contact', [SiteController::class, 'handleContact']);
 
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);
@@ -34,7 +32,6 @@ $app->router->get('/logout', [AuthController::class, 'logout']);
 
 $app->router->get('/csv', [CsvController::class, 'index']);
 $app->router->post('/csv', [CsvController::class, 'upload']);
-
 
 $app->run();
 

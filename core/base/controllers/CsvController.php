@@ -27,7 +27,7 @@ class CsvController extends Controller
         if (empty($res)) {
             return 'error';
         }
-
+        Application::$app->session->setFlash('success', 'File added in to database');
         return $response->redirect('/');
     }
 

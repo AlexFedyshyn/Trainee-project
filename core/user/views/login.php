@@ -1,5 +1,9 @@
 <?php
 /** @var $model \app\core\base\models\User */
+
+/** @var $this \app\core\base\controllers\View */
+$this->title = 'Login';
+
 ?>
 
 <h1>Login</h1>
